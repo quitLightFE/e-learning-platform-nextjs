@@ -5,6 +5,9 @@ export async function GET(req, { params }) {
   const { course } = await params;
   console.log(course);
 
-  const finded = coursesData.find((item) => item.slug === course);
-  return NextResponse.json(finded);
+  const found = coursesData.find((item) => item.slug === course);
+  if (!found) {
+    return NextResponse.json({ message: "Course not found" }, { status: 404 });
+  }
+  return NextResponse.json(found);
 }
