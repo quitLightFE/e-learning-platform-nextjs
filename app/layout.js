@@ -5,6 +5,7 @@ import { Rubik } from "next/font/google";
 //Font awesome
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
+import ProgressBar from "@/components/ProgressBar";
 config.autoAddCss = false;
 
 const rubik = Rubik({
@@ -40,6 +41,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${rubik.variable}`}
       >
+        <ProgressBar />
         <Providers>{children}</Providers>
       </body>
     </html>
